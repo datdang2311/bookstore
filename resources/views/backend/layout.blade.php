@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Quản lý
+      
+    </title>
+
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/toolkit-inverse.css') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/application.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+      .fa-user{
+        margin-right: 40px;
+      }
+    </style>
+  </head>
+
+
+<body>
+  <div class="bw">
+    <div class="di">
+      <div class="em brh">
+        <nav class="bro">
+          <div class="bri">
+            <button class="bqe bqg brj" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
+              <span class="aep">Toggle nav</span>
+            </button>
+            <a class="brk bsi" href="../index.html">
+             <!--  <span class="bv bik brl"></span> -->
+             <i class="fa fa-user fa-5x" aria-hidden="true"></i> ADMIN
+            </a>
+          </div>
+
+          <div class="collapse bql" id="nav-toggleable-md">
+            <form class="brm">
+              <input class="form-control" type="text" placeholder="Tìm kiếm...">
+              <button type="submit" class="po">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+            <ul class="nav qq nav-stacked xx">
+              <li class="ayx">Quản lý website</li>
+              <li class="qp">
+                <a class="qn " href="../index.html">Sản phẩm</a>
+              </li>
+              <li class="qp">
+                <a class="qn " href="../order-history/index.html">Tin tức</a>
+              </li>
+              <li class="qp">
+                <a class="qn " href="../fluid/index.html">Danh mục sản phẩm</a>
+              </li>
+              <li class="ayx">Quản lý bán hàng</li>
+              <li class="qp">
+                <a class="qn "href="../docs/index.html">
+                  Đơn hàng
+                </a>
+              </li>
+            </ul>
+            <hr class="bsj afx">
+          </div>
+        </nav>
+      </div>
+      <div class="es bsk">
+        <div class="brv">
+  <!-- Main -->
+  <div class="Container">
+    @yield('controller')
+  </div>
+</div>
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/tether.min.js') }}"></script>
+    <script src="{{ asset('js/tablesorter.min.js') }}"></script>
+    <script src="{{ asset('js/toolkit.js') }}"></script>
+    <script src="{{ asset('js/application.js') }}"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
+
