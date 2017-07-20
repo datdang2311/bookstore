@@ -22,3 +22,11 @@ Route::get('login', function () {
 Route::get('product', function() {
 	return view('backend.product');
 });
+
+Route::get('admin', function() {
+	return view('backend.admin');
+});
+
+Route::get('product_add_edit', function() {
+	return view('backend.product_add_edit');
+});

@@ -92,7 +92,6 @@
     @yield('controller')
   </div>
 </div>
-
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/tether.min.js') }}"></script>
     <script src="{{ asset('js/tablesorter.min.js') }}"></script>

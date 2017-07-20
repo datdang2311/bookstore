@@ -10,7 +10,7 @@
 <div class="bpx azo">
   <div class="bpy bpz">
     <div class="ayt brg">
-      <input type="text" class="form-control bvj" placeholder="Tìm kiếm sản phẩm">
+      <input type="text" class="form-control bvj" placeholder="Tìm kiếm tài khoản">
       <span class="bv"><i class="fa fa-search" aria-hidden="true" ></i></span>
     </div>
   </div>
@@ -23,22 +23,22 @@
   </div>
 </div>
 
+
 <div class="nu">
   <table class="ck" data-sort="table">
     <thead>
       <tr>
-        <th width="110px">Ảnh</th>
-        <th width="70px">ID</th>
         <th width="100px">Tên</th>
-        <th width="100px">Danh mục</th>       
-        <th width="100px">Giá bán</th>
-        <th width="20px">Status</th>
+        <th width="60px">ID</th>
+        <th width="100px">Tài khoản</th>
+        <th width="150px">Địa chỉ</th>
+        <th width="100px">Số điện thoại</th>
         <th width="10px"></th>
-        <th width="10xp"></th>
+        <th width="10px"></th>
       </tr>
     </thead>
     <tbody>
-      <!-- body -->
+    
     </tbody>
   </table>
 </div>
@@ -71,4 +71,6 @@
     </div>
   </div>
 
+  <!--  -->
+</div>
 @endsection

@@ -1519,12 +1519,15 @@ pre {
     border-top: 1px solid #434857; }
   .ck thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #434857; }
+    border-bottom: 2px solid #434857;
+    font-weight: bold; }
   .ck tbody + tbody {
     border-top: 2px solid #434857; }
   .ck .ck {
     background-color: #252830; }
-
+  .ck .picture{
+    width: 150px;
+  }
 .nk th,
 .nk td {
   padding: 0.3rem; }
