@@ -417,7 +417,6 @@ output {
 
 [hidden] {
   display: none !important; }
-
 h1, h2, h3, h4, h5, h6,
 .a, .b, .c, .d, .e, .f {
   margin-bottom: 0.5rem;
@@ -1664,7 +1663,9 @@ pre {
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #30343e;
-    opacity: 1; }
+    opacity: 1;
+    color: #51586A;
+    font-weight: bold; }
   .form-control:disabled {
     cursor: not-allowed; }
 
@@ -9427,3 +9428,94 @@ canvas {
   color: #fff;
   background-color: #4d5364;
   border-color: transparent; }
+.form-ct {
+  
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #434857;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  .form-ct::-ms-expand {
+    background-color: transparent;
+    border: 0; }
+  .form-ct:focus {
+    color: #555;
+    background-color: #fff;
+    border-color: #fff;
+    outline: none; }
+  .form-ct::-webkit-input-placeholder {
+    color: #cfd2da;
+    opacity: 1; }
+  .form-ct::-moz-placeholder {
+    color: #cfd2da;
+    opacity: 1; }
+  .form-ct:-ms-input-placeholder {
+    color: #cfd2da;
+    opacity: 1; }
+  .form-ct::placeholder {
+    color: #cfd2da;
+    opacity: 1; }
+  .form-ct:disabled, .form-ct[readonly] {
+    background-color: #30343e;
+    opacity: 1;
+    color: #51586A;
+    font-weight: bold; }
+  .form-ct:disabled {
+    cursor: not-allowed; }
+
+select.form-ct:not([size]):not([multiple]) {
+  height: calc(2.25rem + 2px); }
+
+select.form-ct:focus::-ms-value {
+  color: #fff;
+  background-color: #434857; }
+
+.form-select {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #434857;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  .form-select::-ms-expand {
+    background-color: transparent;
+    border: 0; }
+  .form-select:focus {
+    color: #fff;
+    background-color: #434857;
+    border-color: #434857;
+    outline: none; }
+
+
+  .form-select-year {
+  width: 40px;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  color: #fff;
+  background-color: #434857;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  .form-select-year::-ms-expand {
+    background-color: transparent;
+    border: 0; }
+  .form-select-year:focus {
+    color: #fff;
+    background-color: #434857;
+    border-color: #434857;
+    outline: none; }

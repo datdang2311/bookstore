@@ -14,6 +14,8 @@
       
     </title>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+    
     <link href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic') }}" rel="stylesheet">
     
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
@@ -29,17 +31,11 @@
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :) */
-      body {
-        width: 1px;
-        min-width: 100%;
-        *width: 100%;
-      }
-      .fa-user{
-        margin-right: 40px;
-      }
+      
+      
     </style>
   </head>
-
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
 <body>
   <div class="bw">
@@ -79,6 +75,10 @@
                 <a class="qn "href="../docs/index.html">
                   Đơn hàng
                 </a>
+              </li>
+              <li class="ayx">Quản lý hệ thống</li>
+              <li class="qp">
+                <a class="qn" href="#">Tài khoản Admin</a>
               </li>
             </ul>
             <hr class="bsj afx">

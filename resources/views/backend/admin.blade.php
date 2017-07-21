@@ -1,8 +1,8 @@
 @extends('backend.layout')
 @section('controller')
  <div class="brw">
-    <h6 class="bry">Quản lý website</h6>
-    <h2 class="brx">Sản phẩm</h2>
+    <h6 class="bry">Quản lý hệ thống</h6>
+    <h2 class="brx">Tài khoản Admin</h2>
   </div>
 
 </div>
@@ -53,10 +53,6 @@
         </a>
       </li>
       <li class="sr active"><a class="ss" href="#">1</a></li>
-      <li class="sr"><a class="ss" href="#">2</a></li>
-      <li class="sr"><a class="ss" href="#">3</a></li>
-      <li class="sr"><a class="ss" href="#">4</a></li>
-      <li class="sr"><a class="ss" href="#">5</a></li>
       <li class="sr">
         <a class="ss" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>

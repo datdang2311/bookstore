@@ -30,3 +30,7 @@ Route::get('admin', function() {
 Route::get('product_add_edit', function() {
 	return view('backend.product_add_edit');
 });
+
+Route::get('/', function(){
+	return view('backend.test');
+});
