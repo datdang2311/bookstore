@@ -37,3 +37,7 @@ Route::get('product_add_edit', function() {
 Route::get('/', function(){
 	return view('backend.test');
 });
+
+Route::get('admin_add_edit', function() {
+	return view('backend.admin_add_edit');
+});

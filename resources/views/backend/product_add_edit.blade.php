@@ -121,7 +121,7 @@
 							<input type="submit" name="" value="Lưu Sản phẩm" class="button_submit">
 						</div>
 					</div>
-					</form>
+				</form>
 			</td>
 		</tr>
 	</table>
