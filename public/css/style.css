@@ -148,10 +148,11 @@ body{
     width: 43px;
 }
 
-body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > button > i{
-         left: -12px;
+body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > button > i {
+    left: -12px;
 }
 
+<<<<<<< HEAD
 body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span > i{
         left: -15px;
 }
@@ -167,6 +168,10 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
     background-color:  #51586A;
     border-left: 3px solid #51586A;
     font-weight: bold;
+=======
+body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span > i {
+    left: -13px;
+>>>>>>> 9b53a75a9499301ba73a62979c2088dc4a6c2362
 }
 
 .tbl table tr #aepb{
