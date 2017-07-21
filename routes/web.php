@@ -19,17 +19,17 @@ Route::get('home', function () {
 });
 
 Route::get('login', function () {
-    return view('backend.login');
+	return view('backend.login');
 });
 
-Route::get('product', function () {
-    return view('backend.product');
+Route::get('product', function() {
+	return view('backend.product');
 });
 
-Route::get('admin', function () {
-    return view('backend.admin');
+Route::get('admin', function() {
+	return view('backend.admin');
 });
 
-Route::get('product_add_edit', function () {
-    return view('backend.product_add_edit');
+Route::get('product_add_edit', function() {
+	return view('backend.product_add_edit');
 });
