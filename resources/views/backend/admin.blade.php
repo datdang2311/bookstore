@@ -1,9 +1,9 @@
 @extends('backend.layout')
 @section('controller')
- <div class="brw">
+<div class="brw">
     <h6 class="bry">Quản lý hệ thống</h6>
     <h2 class="brx">Tài khoản Admin</h2>
-  </div>
+</div>
 
 </div>
 <br><br><br>
@@ -61,12 +61,5 @@
       </li>
     </ul>
   </nav>
-</div>
-
-      </div>
-    </div>
-  </div>
-
-  <!--  -->
 </div>
 @endsection

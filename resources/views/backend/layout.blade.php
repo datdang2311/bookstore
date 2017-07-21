@@ -86,12 +86,12 @@
         </nav>
       </div>
       <div class="es bsk">
-        <div class="brv">
-  <!-- Main -->
-  <div class="Container">
-    @yield('controller')
+      <div class="brv">
+      <!-- Main -->
+      <div class="Container">
+        @yield('controller')
+      </div>
   </div>
-</div>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/tether.min.js') }}"></script>
     <script src="{{ asset('js/tablesorter.min.js') }}"></script>
@@ -101,6 +101,6 @@
       // execute/clear BS loaders for docs
       $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
     </script>
-  </body>
+</body>
 </html>
 
