@@ -24,6 +24,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
 
     Route::get('categories', 'backend\CategoryController@getDanhsach');
     Route::get('categories_add_edit', 'backend\CategoryController@addedit');
+
+    Route::get('news','backend\NewsController@getAll');
+    Route::get('orders','backend\OrderController@getAll');
+
 });
 
 
@@ -32,3 +36,7 @@ Route::get('login', function () {
 });
 
 Route::post('login', 'backend\loginController@checkLogin');
+
+Route::get('/', function () {
+    return view('welcome');
+});
