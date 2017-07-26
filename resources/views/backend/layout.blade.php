@@ -62,23 +62,23 @@
             <ul class="nav qq nav-stacked xx">
               <li class="ayx">Quản lý website</li>
               <li class="qp">
-                <a class="qn " href="../index.html">Sản phẩm</a>
+                <a class="qn " href="{{ url('admin/products') }}">Sản phẩm</a>
               </li>
               <li class="qp">
-                <a class="qn " href="../order-history/index.html">Tin tức</a>
+                <a class="qn " href="{{ url('admin/news') }}">Tin tức</a>
               </li>
               <li class="qp">
-                <a class="qn " href="../fluid/index.html">Danh mục sản phẩm</a>
+                <a class="qn " href="{{ url('admin/categories') }}">Danh mục sản phẩm</a>
               </li>
               <li class="ayx">Quản lý bán hàng</li>
               <li class="qp">
-                <a class="qn "href="../docs/index.html">
+                <a class="qn" href="{{ url('admin/orders') }}">
                   Đơn hàng
                 </a>
               </li>
               <li class="ayx">Quản lý hệ thống</li>
               <li class="qp">
-                <a class="qn" href="#">Tài khoản Admin</a>
+                <a class="qn" href="{{ url('admin/accounts') }}">Tài khoản Admin</a>
               </li>
             </ul>
             <hr class="bsj afx">

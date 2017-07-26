@@ -18,11 +18,12 @@
         <div class="loginmodal-container">
             <h1>Admin Login</h1><br>
 
-            <form>
+            <form method="post" action="">
                 <input type="text" name="user" placeholder="Username">
                 <input type="password" name="pass" placeholder="Password">
                 <input type="submit" name="login" class="btn btn-info" value="Login">
                 <input type="reset" name="reset" class="btn btn-danger" value="Reset">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </form>
         </div>
     </div>
