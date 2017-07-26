@@ -31,3 +31,7 @@ Route::get('login', function () {
 });
 
 Route::post('login', 'backend\loginController@checkLogin');
+
+Route::get('/', function () {
+    return view('welcome');
+});
