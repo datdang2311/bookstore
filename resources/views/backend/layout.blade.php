@@ -38,6 +38,14 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
 <body>
+    <div class="header bw">
+        <button type="button" class="btn btn-default btn-sm" >
+               <a class="glyphicon glyphicon-cog"></a> Change password
+        </button>
+        <button type="button" class="btn btn-default btn-sm" >
+                <a class="glyphicon glyphicon-log-out"></a> Log out
+        </button>
+    </div>
   <div class="bw">
     <div class="di">
       <div class="em brh">
@@ -46,7 +54,7 @@
             <button class="bqe bqg brj" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
               <span class="aep">Toggle nav</span>
             </button>
-            <a class="brk bsi" href="#">
+            <a class="brk bsi" href="{{url('admin/accounts')}}">
              <!--  <span class="bv bik brl"></span> -->
              <i class="fa fa-user fa-5x" aria-hidden="true"></i> ADMIN
             </a>

@@ -1,11 +1,13 @@
-body{
+body {
     width: 1px;
     min-width: 100%;
     *width: 100%;
 }
-.fa-user{
+
+.fa-user {
     margin-right: 40px;
 }
+
 #login-modal {
     background-color: #252830;
     padding-top: 150px;
@@ -148,44 +150,48 @@ body{
     width: 43px;
 }
 
-body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > a > div > i{
-         left: -12px;
+body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > a > div > i {
+    left: -12px;
 }
 
-body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span > i{
-        left: -15px;
+body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span > i {
+    left: -15px;
 }
 
 /*============================================style Ngân Đù==============================================*/
-.tbl table{
+.tbl table {
     margin-top: 50px;
 }
-.tbl table tr #aeph{
+
+.tbl table tr #aeph {
     padding-left: 10px;
     vertical-align: bottom;
     height: 50px;
     font-size: 20px;
     border-radius: 0 50px 0 0;
-    background-color:  #51586A;
+    background-color: #51586A;
     border-left: 3px solid #51586A;
     font-weight: bold;
 }
 
-.tbl table tr #aepb{
+.tbl table tr #aepb {
     padding: 20px 20px 20px 20px;
     border: 3px solid #51586A;
 }
 
-.tbl table tr #aepb #ipi{
+.tbl table tr #aepb #ipi {
     width: 100px;
 }
-.tbl table tr #aepb .line{
+
+.tbl table tr #aepb .line {
     padding-bottom: 50px;
 }
-.tbl table tr #aepb .submit_line{
+
+.tbl table tr #aepb .submit_line {
     text-align: right;
 }
-.tbl table tr #aepb .line .button_submit{
+
+.tbl table tr #aepb .line .button_submit {
     margin-top: 10px;
     padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
@@ -196,25 +202,64 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.nav>li>a:focus, .nav>li>a:hover {
+
+.nav > li > a:focus, .nav > li > a:hover {
     background-color: #434857;
 }
-.fa-wrench{
+
+.fa-wrench {
     margin: 0px;
     padding: 0px;
-  }
+}
 
-.fa-trash-o{
-    margin: 0; padding: 0;
-  }
+.fa-trash-o {
+    margin: 0;
+    padding: 0;
+}
 
-.tbl table tr #aepb .line .ava{
+.tbl table tr #aepb .line .ava {
     height: 100px;
     margin-top: 10px;
 }
-.tbl table tr #aepb .line .ava img{
+
+.tbl table tr #aepb .line .ava img {
     height: 100px;
+}
+
+.header.bw > button {
+    color: #1997c6;
+    background: #252830;
+    border: 1px solid #1997c6;
+}
+
+.header.bw {
+    text-align: right;
+}
+
+body > div:nth-child(2) > div > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div {
+    border: 1px solid #1997c6;
+}
+
+body > div:nth-child(2) > div > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > a > div {
+    color: #1997c6;
+    background: #252830;
+}
+
+body > div:nth-child(2) > div > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > a > div:hover {
+    color: #fff;
+    background-color: #1997c6;
+    border-color: #1997c6;
+}
+
+body > div.header.bw > button:hover {
+    color: #fff;
+    background-color: #1997c6;
+    border-color: #1997c6;
+}
+
+body > div:nth-child(2) > div > div.es.bsk > div > div.nu > table > thead > tr > th.header {
+    white-space: nowrap;
 }
