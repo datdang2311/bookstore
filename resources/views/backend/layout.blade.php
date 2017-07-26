@@ -46,7 +46,7 @@
             <button class="bqe bqg brj" type="button" data-toggle="collapse" data-target="#nav-toggleable-md">
               <span class="aep">Toggle nav</span>
             </button>
-            <a class="brk bsi" href="../index.html">
+            <a class="brk bsi" href="#">
              <!--  <span class="bv bik brl"></span> -->
              <i class="fa fa-user fa-5x" aria-hidden="true"></i> ADMIN
             </a>
