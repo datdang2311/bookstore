@@ -148,7 +148,7 @@ body{
     width: 43px;
 }
 
-body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > button > i{
+body > div > div.di > div.es.bsk > div > div.bpx.azo > div:nth-child(2) > div > a > div > i{
          left: -12px;
 }
 
@@ -202,5 +202,19 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
 .nav>li>a:focus, .nav>li>a:hover {
     background-color: #434857;
 }
+.fa-wrench{
+    margin: 0px;
+    padding: 0px;
+  }
 
-/****************************************Style Đạt********************************************/
+.fa-trash-o{
+    margin: 0; padding: 0;
+  }
+
+.tbl table tr #aepb .line .ava{
+    height: 100px;
+    margin-top: 10px;
+}
+.tbl table tr #aepb .line .ava img{
+    height: 100px;
+}

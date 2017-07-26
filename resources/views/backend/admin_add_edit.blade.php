@@ -13,47 +13,50 @@
 		</tr>
 		<tr>
 			<td id="aepb" width="100%" colspan="2">
-				<form enctype="multipart/form-data">
+				<form enctype="multipart/form-data" method="post">
 					<div class="line">
-						<div class="col-md-2">Mã tài khoản:</div>
+						<div class="col-md-2">Mã:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="id" class="form-control" value="{{ isset($arr->id)?$arr->id:'' }}" disabled="">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Tên:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="name" class="form-control" value="{{ isset($arr->name)?$arr->name:'' }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Tài khoản:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="account" class="form-control" value="{{ isset($arr->account)?$arr->account:'' }}" {{ isset($arr->account)?"disabled":'' }}>
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Mật khẩu:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="password" class="form-control" value="{{ isset($arr->password)?$arr->password:'' }}" {{ isset($arr->account)?"disabled":'' }}>
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Địa chỉ:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="address" class="form-control" value="{{ isset($arr->address)?$arr->address:'' }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Số điện thoại:</div>
 						<div class="col-md-10">
-							<input type="text" name="" class="form-control">
+							<input type="text" name="phoneNumber" class="form-control" value="{{ isset($arr->phoneNumber)?$arr->phoneNumber:'' }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Ảnh đại diện:</div>
-						<div class="col-md-10">
-							<input type="file" name="product_image">
+						<div class="col-md-7 ava">
+							<input type="file" name="avatar">
+							@if(isset($arr->avatar)&&file_exists('upload/avatars/'.$arr->avatar))
+								<img src="{{ asset('upload/avatars/'.$arr->avatar) }}">
+							@endif
 						</div>
 					</div>
 					<div class="line submit_line">
@@ -61,6 +64,7 @@
 							<input type="submit" name="" value="Lưu Sản phẩm" class="button_submit">
 						</div>
 					</div>
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				</form>
 			</td>
 		</tr>
