@@ -16,6 +16,6 @@ class loginController extends Controller
     	$password = Request::get('pass');
     	if(Auth::attempt(["account"=>$user, "password"=>$password]))
     		return view('backend.home');
-    	else return view('backend.login');
+    	else return redirect(url('login?err=invalid'));
     }
 }

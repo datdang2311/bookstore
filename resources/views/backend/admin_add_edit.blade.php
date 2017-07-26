@@ -52,16 +52,13 @@
 					</div>
 					<div class="line">
 						<div class="col-md-2">Ảnh đại diện:</div>
-						<div class="col-md-7 ava">
+						<div class="col-md-7">
 							<input type="file" name="avatar">
-							@if(isset($arr->avatar)&&file_exists('upload/avatars/'.$arr->avatar))
-								<img src="{{ asset('upload/avatars/'.$arr->avatar) }}">
-							@endif
 						</div>
 					</div>
 					<div class="line submit_line">
 						<div class="col-md-12">
-							<input type="submit" name="" value="Lưu Sản phẩm" class="button_submit">
+							<input type="submit" name="" value="Lưu Tài khoản" class="button_submit">
 						</div>
 					</div>
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">

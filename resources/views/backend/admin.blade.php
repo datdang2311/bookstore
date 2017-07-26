@@ -4,6 +4,9 @@
 <style type="text/css">
   
 </style>
+@if(Request::get('err') == )
+@endif
+<div class=""></div>
 <div class="brw">
     <h6 class="bry">Quản lý hệ thống</h6>
     <h2 class="brx">Tài khoản Admin</h2>
@@ -63,7 +66,7 @@
           </a>
         </td>
         <td>
-          <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/accouns/delete/'.$rows->id) }}">
+          <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/accounts/delete/'.$rows->id) }}">
             <i class="fa fa-trash-o" aria-hidden="true" ></i>
           </a>
         </td>

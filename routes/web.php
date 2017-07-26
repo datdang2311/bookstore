@@ -17,6 +17,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::post('accounts/add', 'backend\AdminController@add');
     Route::get('accounts/edit/{id}', 'backend\AdminController@getEdit');
     Route::post('accounts/edit/{id}', 'backend\AdminController@edit');
+    Route::get('accounts/delete/{id}', 'backend\AdminController@delete');
 
     Route::get('products', 'backend\ProductController@getDanhsach');
     Route::get('products_add_edit', 'backend\ProductController@addedit');

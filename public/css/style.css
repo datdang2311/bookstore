@@ -156,7 +156,7 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
         left: -15px;
 }
 
-/*============================================style Ngân Đù==============================================*/
+/*============================================style Ngân==============================================*/
 .tbl table{
     margin-top: 50px;
 }
@@ -217,4 +217,14 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
 }
 .tbl table tr #aepb .line .ava img{
     height: 100px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    width: 350px;
+    margin: auto;
+    /* font-weight: bold; */
+    font-family: Arial;
 }
