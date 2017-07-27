@@ -16,7 +16,7 @@
 <div class="modal fade in" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="false" style="display: block;">
     @if(Request::get('err') == 'invalid')
-        <div class="alert alert-danger">Sai thông tin đăng nhập !!!</div>
+        <div class="alert alert-danger alert-danger-login">Sai thông tin đăng nhập !!!</div>
     @endif
     <div class="modal-dialog">
         <div class="loginmodal-container">

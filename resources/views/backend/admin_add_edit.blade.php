@@ -6,6 +6,11 @@
 </div>
 <br><br><br>
 <div class="tbl">
+	@if(Request::get('err') == 'invalid')
+		<div class="alert alert-danger">
+			Tài khoản này đã tồn tại trong hệ thống!
+		</div>
+	@endif
 	<table width="100%">
 		<tr>
 			<th id="aeph" width="50%;">Thêm sửa Tài khoản Admin</th>

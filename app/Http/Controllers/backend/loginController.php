@@ -18,4 +18,9 @@ class loginController extends Controller
     		return view('backend.home');
     	else return redirect(url('login?err=invalid'));
     }
+
+    public function logout(){
+    	Auth::logout();
+    	return redirect(url('login'));
+    }
 }

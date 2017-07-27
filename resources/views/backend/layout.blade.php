@@ -42,9 +42,11 @@
         <button type="button" class="btn btn-default btn-sm" >
                <a class="glyphicon glyphicon-cog"></a> Change password
         </button>
-        <button type="button" class="btn btn-default btn-sm" >
-                <a class="glyphicon glyphicon-log-out"></a> Log out
-        </button>
+        <a href="{{ url('logout') }}">
+          <button type="button" class="btn btn-default btn-sm" >
+                <a class="glyphicon glyphicon-log-out" ></a> Log out
+          </button>
+        </a>
     </div>
   <div class="bw">
     <div class="di">

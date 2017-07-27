@@ -4,9 +4,6 @@
 <style type="text/css">
   
 </style>
-@if(Request::get('err') == )
-@endif
-<div class=""></div>
 <div class="brw">
     <h6 class="bry">Quản lý hệ thống</h6>
     <h2 class="brx">Tài khoản Admin</h2>
@@ -34,6 +31,12 @@
 
 
 <div class="nu">
+    @if(Request::get('err') == 'invalid')
+        <div class="alert alert-danger">
+          Không thể xóa tài khoản đang đăng nhập!
+        </div>
+    @endif
+
   <table class="ck" data-sort="table">
     <thead>
       <tr>
