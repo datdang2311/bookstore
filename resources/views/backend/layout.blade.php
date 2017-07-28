@@ -43,7 +43,7 @@
                <a class="glyphicon glyphicon-cog"></a> Change password
         </button>
         <button type="button" class="btn btn-default btn-sm" >
-                <a class="glyphicon glyphicon-log-out"></a> Log out
+                <span class="glyphicon glyphicon-log-out"></span> Log out
         </button>
     </div>
   <div class="bw">

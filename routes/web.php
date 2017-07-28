@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::get('categories_add_edit', 'backend\CategoryController@addedit');
 
     Route::get('news', 'backend\NewsController@getAll');
+    Route::get('news/editView/{id}', 'backend\NewsController@editView');
+    Route::post('news/edit', ['as' => 'editNew', 'uses' => 'backend\NewsController@edit']);
     Route::get('orders', 'backend\OrderController@getAll');
 
 });

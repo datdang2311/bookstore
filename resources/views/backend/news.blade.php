@@ -28,18 +28,39 @@
   <table class="ck" data-sort="table">
     <thead>
       <tr>
-        <th width="100px">Tiêu đề</th>
         <th width="60px">ID</th>
+        <th width="100px">Tiêu đề</th>
         <th width="110px">Ảnh</th>
         <th width="100px">Mô tả</th>
-        <th width="50px">Ngày tạo</th>
-        <th width="50px">Ngày cập nhật</th>
+        <th width="100px">Nội dung</th>
         <th width="10px"></th>
         <th width="10px"></th>
       </tr>
     </thead>
     <tbody>
-    
+        @foreach($news as $new)
+            <tr>
+                <td>{{$new->id }}</td>
+                <td>{{$new->title }}</td>
+                <td>
+                    @if(!empty($new->image))
+                    <img src="{{asset('upload/avatars/'.$new->image)}}" alt=""/>
+                    @endif
+                </td>
+                <td style="max-height: inherit">{{$new->description}}</td>
+                <td>{{$new->content}}</td>
+                <td>
+                  <a href="{{ url('admin/news/editView/'.$new->id) }}">
+                    <i class="fa fa-wrench" aria-hidden="true" id="fa-wrench"></i>
+                  </a>
+                </td>
+                <td>
+                  <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/accounts/delete/'.$new->id) }}">
+                    <i class="fa fa-trash-o" aria-hidden="true" ></i>
+                  </a>
+                </td>
+            </tr>
+        @endforeach
     </tbody>
   </table>
 </div>
