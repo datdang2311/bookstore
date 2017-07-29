@@ -21,6 +21,9 @@ class ProductsController extends Controller
     }
 
     public function add(){
+
+        $products = new Products();
+
         $name = Request::get('name');
         $author = Request::get('author');
         $published = Request::get('published');
@@ -41,5 +44,12 @@ class ProductsController extends Controller
         $translatorName = Request::get('translatorName');
         $size = Request::get('size_z')."x".Request::get('size_y');
         $status_word = Request::get('status');
+        ($status_word == "Còn hàng")?$status=1:$status=0;
+        $coverPrice = Request::get('coverPrice');
+        $salePrice = Request::get('salePrice');
+        $description = Request::get('description');
+
+        //xử lý ảnh
+        
     }
 }

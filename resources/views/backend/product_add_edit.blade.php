@@ -93,7 +93,7 @@
 						<div class="col-md-2">Người dịch: </div>
 						<div class="col-md-10">
 							<input type="text" name="translatorName" class="form-control">
-						</div>			
+						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Kích thước: </div>
@@ -114,19 +114,19 @@
 					<div class="line">
 						<div class="col-md-2">Giá bìa: </div>
 						<div class="col-md-10">
-							<input type="number" name="coverPrice" class="form-ct">VNĐ / Giá bán:<input type="number" name="salePrice" class="form-ct">VNĐ
+							<input type="number" name="" class="form-ct">VNĐ / Giá bán:<input type="number" name="" class="form-ct">VNĐ
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Ảnh sản phẩm:</div>
 						<div class="col-md-10">
-							<input type="file" name="image">
+							<input type="file" name="product_image">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-12">Mô tả:</div>
 						<div class="col-md-12">
-							<textarea name="product_description"></textarea>
+							<textarea name="description"></textarea>
 							<script type="text/javascript">
 								CKEDITOR.replace('product_description')
 							</script>
