@@ -9,8 +9,6 @@ class Categories extends Model
     protected $table = "categories";
     public $timestamps = false;
 
-    public $timestamps = false;
-
     public function products()
     {
         return $this->hasMany('App\Model\Products', 'categoryId', 'id');
