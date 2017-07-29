@@ -30,7 +30,7 @@
     
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-      /* this chunk of css is not part of the toolkit :) */
+      /* this chunk of css is not part of the toolkit 🙂 */
       
       
     </style>
@@ -115,4 +115,3 @@
     </script>
 </body>
 </html>
-
