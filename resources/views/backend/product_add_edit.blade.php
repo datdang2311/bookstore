@@ -105,7 +105,7 @@
 					<div class="line">
 						<div class="col-md-2">Tình trạng: </div>
 						<div class="col-md-10">
-							<select class="form-select">
+							<select class="form-select" name="status">
 								<option>Còn hàng</option>
 								<option>Hết hàng</option>
 							</select>
@@ -114,13 +114,13 @@
 					<div class="line">
 						<div class="col-md-2">Giá bìa: </div>
 						<div class="col-md-10">
-							<input type="number" name="" class="form-ct">VNĐ / Giá bán:<input type="number" name="" class="form-ct">VNĐ
+							<input type="number" name="coverPrice" class="form-ct">VNĐ / Giá bán:<input type="number" name="salePrice" class="form-ct">VNĐ
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Ảnh sản phẩm:</div>
 						<div class="col-md-10">
-							<input type="file" name="product_image">
+							<input type="file" name="image">
 						</div>
 					</div>
 					<div class="line">

@@ -40,5 +40,6 @@ class ProductsController extends Controller
 
         $translatorName = Request::get('translatorName');
         $size = Request::get('size_z')."x".Request::get('size_y');
+        $status_word = Request::get('status');
     }
 }
