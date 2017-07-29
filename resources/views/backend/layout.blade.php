@@ -40,15 +40,14 @@
 <body>
     <div class="header bw">
         <a href="{{ url('admin/changePassword') }}">
-          <button type="button" class="btn btn-default btn-sm btn-log" >
-          <span class="glyphicon glyphicon-cog"></span> Change password
-        </button>
+            <button type="button" class="btn btn-default btn-sm btn-log" >
+                <span class="glyphicon glyphicon-cog"></span> Change password
+            </button>
         </a>
         <a href="{{ url('logout') }}">
-          <button class="btn btn-default btn-sm btn-log">
-            <span class="glyphicon glyphicon-log-out"></span>
-            Logout
-          </button>
+            <button class="btn btn-default btn-sm btn-log">
+                <span class="glyphicon glyphicon-log-out"></span>Logout
+            </button>
         </a>
     </div>
   <div class="bw">

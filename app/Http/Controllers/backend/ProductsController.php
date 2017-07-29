@@ -50,6 +50,6 @@ class ProductsController extends Controller
         $description = Request::get('description');
 
         //xử lý ảnh
-        
+
     }
 }
