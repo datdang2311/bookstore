@@ -47,3 +47,7 @@ Route::get('login', function () {
 Route::post('login', 'backend\loginController@checkLogin');
 
 Route::get('logout', 'backend\loginController@logout');
+
+Route::get('/', function(){
+    return view('backend.testCK');
+});

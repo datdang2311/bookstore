@@ -39,24 +39,15 @@
 
 <body>
     <div class="header bw">
-<<<<<<< HEAD
-        <button type="button" class="btn btn-default btn-sm" >
-               <a class="glyphicon glyphicon-cog"></a> Change password
-        </button>
-        <button type="button" class="btn btn-default btn-sm" >
-                <span class="glyphicon glyphicon-log-out"></span> Log out
-=======
         <a href="{{ url('admin/changePassword') }}">
-          <button type="button" class="btn btn-default btn-sm btn-log" >
-          <span class="glyphicon glyphicon-cog"></span> Change password
->>>>>>> 67cf2b8a075f0ab07eb486bdc524e79b7c8182f6
-        </button>
+            <button type="button" class="btn btn-default btn-sm btn-log" >
+                <span class="glyphicon glyphicon-cog"></span> Change password
+            </button>
         </a>
         <a href="{{ url('logout') }}">
-          <button class="btn btn-default btn-sm btn-log">
-            <span class="glyphicon glyphicon-log-out"></span>
-            Logout
-          </button>
+            <button class="btn btn-default btn-sm btn-log">
+                <span class="glyphicon glyphicon-log-out"></span>Logout
+            </button>
         </a>
     </div>
   <div class="bw">

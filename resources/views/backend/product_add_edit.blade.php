@@ -120,15 +120,15 @@
 					<div class="line">
 						<div class="col-md-2">Ảnh sản phẩm:</div>
 						<div class="col-md-10">
-							<input type="file" name="product_image">
+							<input type="file" name="image">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-12">Mô tả:</div>
 						<div class="col-md-12">
-							<textarea name="description"></textarea>
+							<textarea name="product_description"></textarea>
 							<script type="text/javascript">
-								CKEDITOR.replace('product_description')
+								CKEDITOR.replace('product_description');
 							</script>
 						</div>
 					</div>
