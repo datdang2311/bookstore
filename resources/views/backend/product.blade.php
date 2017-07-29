@@ -42,7 +42,7 @@
     <tbody>
       @foreach($arr as $rows)
         <?php
-            $products = new \App\products();
+            $products = new \App\Model\Products();
             $category = $products->getCategory($rows->categoryId);
         ?>
         <tr>

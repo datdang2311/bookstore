@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\categories;
+use App\Model\Categories;
 use Request;
 use App\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
     public  function getDanhsach(){
-        $categories = new categories();
+        $categories = new Categories();
         $data["arr"] = $categories->paginate(10);
         return view('backend.category',$data);
     }
@@ -21,7 +21,7 @@ class CategoriesController extends Controller
     public function add(){
         $name = Request::get('name');
 
-        $categories = new categories();
+        $categories = new Categories();
         foreach($categories->get() as $category){
             if($category->name == $name)
                 return redirect('admin/category_add_edit?err=invalid');
@@ -43,13 +43,13 @@ class CategoriesController extends Controller
     }
 
     public function  getEdit($id){
-        $categories = new categories();
+        $categories = new Categories();
         $data["arr"] = $categories->where('id','=',$id)->first();
         return view('backend.category_add_edit', $data);
     }
 
     public function  edit($id){
-        $categories = new categories();
+        $categories = new Categories();
         $name = Request::get('name');
         $description = Request::get('description');
         //lấy ảnh và upload
@@ -73,7 +73,7 @@ class CategoriesController extends Controller
     }
 
     public function delete($id){
-        $categories = new categories();
+        $categories = new Categories();
         $categories->where('id','=',$id)->delete();
         return redirect('admin/categories');
     }

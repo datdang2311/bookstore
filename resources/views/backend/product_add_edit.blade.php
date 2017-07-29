@@ -45,7 +45,7 @@
 						<div class="col-md-10">
 							<select name="category" class="form-select">
 								<?php
-								$categories = new \App\categories();
+								$categories = new \App\Model\Categories();
 								foreach($categories->get() as $category){
 								?>
 								<option>{{ $category->name }}</option>
@@ -81,7 +81,7 @@
 						<div class="col-md-10">
 							<select class="form-select">
                                 <?php
-                                $languages = new \App\language();
+                                $languages = new \App\Model\Languages();
                                 foreach($languages->get() as $language){
                                 ?>
                                 <option>{{ $language->name }}</option>

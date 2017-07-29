@@ -3,10 +3,13 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Products extends Model
 {
     protected $table = "products";
+
+    public $timestamps = false;
 
     public function languages()
     {
@@ -26,5 +29,11 @@ class Products extends Model
     public function orderItem()
     {
         return $this->hasMany('App\Model\OrderItems', 'productId', 'id');
+    }
+
+    public function getCategory($id){
+        $categories = DB::table('categories')->where('id','=',$id)->first();
+        $categories_name = $categories->name;
+        return $categories_name;
     }
 }

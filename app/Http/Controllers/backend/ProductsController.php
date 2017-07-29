@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\categories;
-use App\language;
-use App\products;
+use App\Model\Categories;
+use App\Model\Languages;
+use App\Model\Products;
 use Request;
 use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
     public function getDanhsach(){
-        $products = new products();
+        $products = new Products();
         $data["arr"] = $products->paginate(10);
         return view('backend.product',$data);
     }
@@ -27,7 +27,7 @@ class ProductsController extends Controller
 
         $category = Request::get('category');
         //lấy id danh mục theo tên danh mục
-        $categories = new categories();
+        $categories = new Categories();
         $category_id = $categories->where('name',$category)->first()->id;
 
         $year = Request::get('year1').Request::get('year2').Request::get('year3').Request::get('year4');
@@ -35,7 +35,7 @@ class ProductsController extends Controller
 
         $language = Request::get('language');
         //lấy id theo ngôn ngữ
-        $languages = new language();
+        $languages = new Languages();
         $language_id = $languages->where('name',$language);
 
         $translatorName = Request::get('translatorName');
