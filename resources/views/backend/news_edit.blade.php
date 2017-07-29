@@ -19,7 +19,7 @@
 					<div class="line">
 						<div class="col-md-2">ID:</div>
 						<div class="col-md-10">
-							<input type="text" name="id" class="form-control" value="{{ $new->id }}" disabled="">
+							<input type="text" name="id" class="form-control" value="{{ $new->id }}" readonly>
 						</div>
 					</div>
 					<div class="line">
@@ -32,10 +32,11 @@
 						<div class="col-md-2">Ảnh:</div>
 						<div class="col-md-10">
 						    @if(isset($new->image))
-						        <img src="{{$new->image}}" alt=""/>
+						        <img src="{{asset($new->image)}}" alt="" style="width: 50%"/>
 						         <input type="file" name="image" class="" value="{{ $new->image }}" >
 						    @else
 						        <input type="file" name="image" class="" value="{{ $new->image }}" >
+
 						    @endif
 						</div>
 					</div>

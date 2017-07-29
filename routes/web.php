@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::get('news', 'backend\NewsController@getAll');
     Route::get('news/editView/{id}', 'backend\NewsController@editView');
     Route::post('news/edit', ['as' => 'editNew', 'uses' => 'backend\NewsController@edit']);
+    Route::get('news/delete/{id}','backend\NewsController@delete');
     Route::get('orders', 'backend\OrderController@getAll');
 
 });
@@ -39,6 +40,8 @@ Route::get('login', function () {
 });
 
 Route::post('login', 'backend\loginController@checkLogin');
+
+Route::get('logout', 'backend\loginController@logout');
 
 Route::get('/', function () {
     return view('welcome');

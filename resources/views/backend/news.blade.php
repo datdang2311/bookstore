@@ -42,9 +42,9 @@
             <tr>
                 <td>{{$new->id }}</td>
                 <td>{{$new->title }}</td>
-                <td>
+                <td >
                     @if(!empty($new->image))
-                    <img src="{{asset('upload/avatars/'.$new->image)}}" alt=""/>
+                    <img src="{{asset($new->image)}}" alt="" width="50%"/>
                     @endif
                 </td>
                 <td style="max-height: inherit">{{$new->description}}</td>
@@ -55,7 +55,7 @@
                   </a>
                 </td>
                 <td>
-                  <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/accounts/delete/'.$new->id) }}">
+                  <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/news/delete/'.$new->id) }}">
                     <i class="fa fa-trash-o" aria-hidden="true" ></i>
                   </a>
                 </td>

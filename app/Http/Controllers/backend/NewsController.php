@@ -9,17 +9,45 @@ class NewsController extends Controller
 {
     public function getAll()
     {
-        $news = News::all();
+        $news = News::all()->where('active', '=', 1);
         return view('backend.news', ['news' => $news]);
     }
-    public function editView($id){
+
+    public function editView($id)
+    {
         $new = News::find($id);
-        return view('backend.news_edit',['new'=>$new]);
+        return view('backend.news_edit', ['new' => $new]);
     }
 
-    public function edit(Request $request){
+    public function edit(Request $request)
+    {
         $params = $request->all();
-//        $id = $params['id'];
-        echo json_encode($params);
+        $id = $params['id'];
+        $title = $params['title'];
+
+        if ($request->hasFile('image')) {
+            $images = $request->file('image', '');
+            $fileDirPath = "upload/titleImage/";
+            if (!file_exists($fileDirPath)) {
+                mkdir($fileDirPath, 0777, true);
+            }
+            $fileName = $images->getClientOriginalName();
+            $images->move(env('APP_URL') . '/' . $fileDirPath, $fileName);
+            $imagesUrl = $fileDirPath . $fileName;
+        } else $imagesUrl = News::find(2, ['image'])['image'];
+
+        $description = $params['description'];
+        $content = $params['content'];
+        $updateTime = date("Y-m-d H:i:s", time());
+        $new = new News();
+        $new->where('id', '=', $id)->update(['title' => $title, 'image' => $imagesUrl, 'description' => $description, 'content' => $content, 'updateTime' => $updateTime]);
+        return redirect(url('admin/news'));
+    }
+
+    public function delete($id)
+    {
+        $new = new News();
+        $new->where('id', '=', $id)->update(['active' => 0]);
+        return redirect(url('admin/news'));
     }
 }
