@@ -30,7 +30,7 @@
     
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-      /* this chunk of css is not part of the toolkit :) */
+      /* this chunk of css is not part of the toolkit 🙂 */
       
       
     </style>
@@ -39,17 +39,9 @@
 
 <body>
     <div class="header bw">
-<<<<<<< HEAD
-        <button type="button" class="btn btn-default btn-sm" >
-               <a class="glyphicon glyphicon-cog"></a> Change password
-        </button>
-        <button type="button" class="btn btn-default btn-sm" >
-                <span class="glyphicon glyphicon-log-out"></span> Log out
-=======
         <a href="{{ url('admin/changePassword') }}">
           <button type="button" class="btn btn-default btn-sm btn-log" >
           <span class="glyphicon glyphicon-cog"></span> Change password
->>>>>>> 67cf2b8a075f0ab07eb486bdc524e79b7c8182f6
         </button>
         </a>
         <a href="{{ url('logout') }}">
@@ -124,4 +116,3 @@
     </script>
 </body>
 </html>
-
