@@ -20,7 +20,7 @@
   </div>
   <div class="bpy">
     <div class="pz">
-      <a href="accounts\add">
+      <a href="categories\add">
         <div type="button" class="ce pi">
           <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
         </div>
@@ -36,8 +36,8 @@
       <tr>
         <th width="100px">Ảnh</th>
         <th width="30px">ID</th>
-        <th width="120px">Tên danh mục</th>
-        <th width="120px">Mô tả</th>
+        <th width="150px">Tên danh mục</th>
+        <th width="150px">Mô tả</th>
         <th width="5px"></th>
         <th width="5px"></th>
       </tr>
@@ -46,20 +46,20 @@
       @foreach($arr as $rows)
       <tr>
         <td style="text-align: center;">
-          @if(file_exists('upload/avatars/'.$rows->avatar))
-            <img src="{{ asset('upload/avatars/'.$rows->avatar) }}" style="height: 50px;">
+          @if(file_exists('upload/categories/'.$rows->imageUrl))
+            <img src="{{ asset('upload/categories/'.$rows->imageUrl) }}" style="height: 50px;">
           @endif
         </td>
         <td>{{ $rows->id }}</td>
         <td>{{ $rows->name }}</td>
-        <td>{{ $rows->account }}</td>
+        <td>{{ $rows->description }}</td>
         <td>
-          <a href="{{ url('admin/accounts/edit/'.$rows->id) }}">
+          <a href="{{ url('admin/categories/edit/'.$rows->id) }}">
             <i class="fa fa-wrench" aria-hidden="true" id="fa-wrench"></i>
           </a>
         </td>
         <td>
-          <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa tài khoản này?');" href="{{ url('admin/accounts/delete/'.$rows->id) }}">
+          <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa danh mục này?');" href="{{ url('admin/categories/delete/'.$rows->id) }}">
             <i class="fa fa-trash-o" aria-hidden="true" ></i>
           </a>
         </td>

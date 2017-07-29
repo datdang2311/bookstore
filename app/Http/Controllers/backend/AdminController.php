@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\admin;
+use App\Model\Admins;
 use Hash;
 use DB;
 use Request;
@@ -11,7 +11,8 @@ use Auth;
 class AdminController extends Controller
 {
     public function getDanhsach(){
-    	$data["arr"] = admin::paginate(10);
+        $admin = new Admins();
+    	$data["arr"] = $admin->paginate(10);
     	return view("backend.admin",$data);
     }
 
@@ -20,8 +21,7 @@ class AdminController extends Controller
     }
 
     public function add(){
-        $admin = new admin();
-    	$name = Request::get('name');
+        $admin = new Admins();
     	$account = Request::get('account');
     	$password = Request::get('password');
     	$password = Hash::make($password);//mã hóa mật khẩu
@@ -48,19 +48,20 @@ class AdminController extends Controller
     }
 
     public function getEdit($id){
-    	$data["arr"] = admin::get()->where('id','=',$id)->first();
+        $admin = new Admins();
+    	$data["arr"] = $admin->get()->where('id','=',$id)->first();
     	return view('backend.admin_add_edit', $data);
     }
 
     public function edit($id){
-        $admin = new admin();
+        $admin = new Admins();
         $name = Request::get('name');
         $address = Request::get('address');
         $phoneNumber = Request::get('phoneNumber');
         if(Request::hasFile("avatar")){
             //thuc hien viec xoa anh cu
             $arr_old_avatar = DB::table("admins")->where("id","=",$id)->select("avatar")->first();
-            $old_avatar = isset($arr_old_avatar->avatar)?$arr_old_avatar->avatar:"";
+            $old_avatar = ($arr_old_avatar->avatar != "")?$arr_old_avatar->avatar:"test";
             //xoa anh cu neu anh nay ton tai
             if(file_exists("upload/avatars/$old_avatar"))
                 unlink("upload/avatars/$old_avatar");
@@ -69,7 +70,7 @@ class AdminController extends Controller
             $avatar = time().$avatar;
             //thuc hien viec upload anh
             Request::file("avatar")->move("upload/avatars",$avatar);
-            $admin->where('id','=',$id)->update(['avatar'=>$avatar]);
+            $admin->where('id','=',$id)->update(["avatar"=>$avatar]);
         }
         //thực hiện sửa bảng trong csdl
         $admin->where('id','=',$id)->update(['name'=>$name, 'address'=>$address, 'phoneNumber'=>$phoneNumber]);
@@ -77,14 +78,14 @@ class AdminController extends Controller
     }
 
     public function delete($id){
-        $admin = new admin();
+        $admin = new Admins();
         //Lấy id của người dùng đang đăng nhập để tránh xóa chính tài khoản đang đăng nhập
         $id_user = Auth::user()->id;
         if($id != $id_user)
         {
             //thực hiện xóa ảnh khỏi file
             $arr_old_avatar = $admin->where("id","=",$id)->select("avatar")->first();
-            $old_avatar = isset($arr_old_avatar->avatar)?$arr_old_avatar->avatar:"";
+            $old_avatar = ($arr_old_avatar->avatar != "")?$arr_old_avatar->avatar:"test";
             //xoa anh cu neu anh nay ton tai
             if(file_exists("upload/avatars/$old_avatar"))
                 unlink("upload/avatars/$old_avatar");
