@@ -60,7 +60,7 @@ class AdminController extends Controller
         if(Request::hasFile("avatar")){
             //thuc hien viec xoa anh cu
             $arr_old_avatar = DB::table("admins")->where("id","=",$id)->select("avatar")->first();
-            $old_avatar = isset($arr_old_avatar->avatar)?$arr_old_avatar->avatar:"";
+            $old_avatar = ($arr_old_avatar->avatar != "")?$arr_old_avatar->avatar:"test";
             //xoa anh cu neu anh nay ton tai
             if(file_exists("upload/avatars/$old_avatar"))
                 unlink("upload/avatars/$old_avatar");
@@ -69,7 +69,7 @@ class AdminController extends Controller
             $avatar = time().$avatar;
             //thuc hien viec upload anh
             Request::file("avatar")->move("upload/avatars",$avatar);
-            $admin->where('id','=',$id)->update(['avatar'=>$avatar]);
+            $admin->where('id','=',$id)->update(["avatar"=>$avatar]);
         }
         //thực hiện sửa bảng trong csdl
         $admin->where('id','=',$id)->update(['name'=>$name, 'address'=>$address, 'phoneNumber'=>$phoneNumber]);
@@ -84,7 +84,7 @@ class AdminController extends Controller
         {
             //thực hiện xóa ảnh khỏi file
             $arr_old_avatar = $admin->where("id","=",$id)->select("avatar")->first();
-            $old_avatar = isset($arr_old_avatar->avatar)?$arr_old_avatar->avatar:"";
+            $old_avatar = ($arr_old_avatar->avatar != "")?$arr_old_avatar->avatar:"test";
             //xoa anh cu neu anh nay ton tai
             if(file_exists("upload/avatars/$old_avatar"))
                 unlink("upload/avatars/$old_avatar");

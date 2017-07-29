@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class categories extends Model
+class language extends Model
 {
-    protected $table = "categories";
+    public $table = "languages";
     public $timestamps = false;
 }

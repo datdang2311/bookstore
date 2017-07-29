@@ -19,11 +19,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::post('accounts/edit/{id}', 'backend\AdminController@edit');
     Route::get('accounts/delete/{id}', 'backend\AdminController@delete');
 
-    Route::get('products', 'backend\ProductController@getDanhsach');
-    Route::get('products_add_edit', 'backend\ProductController@addedit');
+    Route::get('products', 'backend\ProductsController@getDanhsach');
+    Route::get('products/add', 'backend\ProductsController@getAdd');
+    Route::post('products/add', 'backend\ProductsController@add');
 
-    Route::get('categories', 'backend\CategoryController@getDanhsach');
-    Route::get('categories_add_edit', 'backend\CategoryController@addedit');
+    Route::get('categories', 'backend\CategoriesController@getDanhsach');
+    Route::get('categories/add', 'backend\CategoriesController@getAdd');
+    Route::post('categories/add', 'backend\CategoriesController@add');
+    Route::get('categories/edit/{id}', 'backend\CategoriesController@getEdit');
+    Route::post('categories/edit/{id}', 'backend\CategoriesController@edit');
+    Route::get('categories/delete/{id}', 'backend\CategoriesController@delete');
 
     Route::get('news', 'backend\NewsController@getAll');
     Route::get('orders', 'backend\OrderController@getAll');
@@ -38,7 +43,3 @@ Route::get('login', function () {
 Route::post('login', 'backend\loginController@checkLogin');
 
 Route::get('logout', 'backend\loginController@logout');
-
-Route::get('/', function () {
-    return view('welcome');
-});

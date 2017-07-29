@@ -15,11 +15,13 @@
     </div>
   </div>
   <div class="bpy">
-    <div class="pz">
-      <button type="button" class="ce pi">
-        <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-      </button>
-    </div>
+      <div class="pz">
+        <a href="products\add">
+          <div type="button" class="ce pi">
+            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
   </div>
 </div>
 
@@ -38,28 +40,39 @@
       </tr>
     </thead>
     <tbody>
-      <!-- body -->
+      @foreach($arr as $rows)
+        <?php
+            $products = new \App\products();
+            $category = $products->getCategory($rows->categoryId);
+        ?>
+        <tr>
+            <td style="text-align: center">
+            @if(file_exists("upload/products/$rows->image"))
+                <img src={{ asset('upload/products/$rows->image') }}>
+            @endif
+            </td>
+            <td>{{ $rows->id }}</td>
+            <td>{{ $rows->name}}</td>
+            <td>{{ $category }}</td>
+            <td>{{ $rows->salePrice }}</td>
+            <td>{{ $rows->status }}</td>
+            <td>
+                <a href="{{ url('admin/products/edit/'.$rows->id) }}">
+                    <i class="fa fa-wrench" aria-hidden="true" id="fa-wrench"></i>
+                </a>
+            </td>
+            <td>
+                <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa sản phẩm này?');" href="{{ url('admin/products/delete/'.$rows->id) }}">
+                    <i class="fa fa-trash-o" aria-hidden="true" ></i>
+                </a>
+            </td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
 
-<div class="awt">
-  <nav>
-    <ul class="sq">
-      <li class="sr">
-        <a class="ss" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="aep">Previous</span>
-        </a>
-      </li>
-      <li class="sr active"><a class="ss" href="#">1</a></li>
-      <li class="sr">
-        <a class="ss" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="aep">Next</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+<div class="pag">
+  {{ $arr->render() }}
 </div>
 @endsection

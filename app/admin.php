@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class admin extends Model
 {
     public $table = "admins";
-    public $timestamp = true;
+    public $timestamps = false;
 }
