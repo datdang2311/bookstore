@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
 
     Route::get('news', 'backend\NewsController@getAll');
     Route::get('news/editView/{id}', 'backend\NewsController@editView');
+    Route::get('news/addView', 'backend\NewsController@addView');
+
     Route::post('news/edit', ['as' => 'editNew', 'uses' => 'backend\NewsController@edit']);
     Route::get('news/delete/{id}','backend\NewsController@delete');
     Route::get('orders', 'backend\OrderController@getAll');
