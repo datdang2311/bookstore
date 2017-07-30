@@ -1,5 +1,4 @@
 
-@if(isset($new))
 @extends('backend.layout')
 @section('controller')
 <div class="brw">
@@ -15,7 +14,11 @@
 		</tr>
 		<tr>
 			<td id="aepb" width="100%" colspan="2">
+			    @if(isset($new))
 				<form enctype="multipart/form-data" method="post" action="{{route('editNew')}}">
+				@else
+				<form enctype="multipart/form-data" method="post" action="{{route('addNew')}}">
+				@endif
 					<div class="line">
 						<div class="col-md-2">ID:</div>
 						<div class="col-md-10">
@@ -64,4 +67,3 @@
 	</table>
 </div>
 @endsection
-@endif

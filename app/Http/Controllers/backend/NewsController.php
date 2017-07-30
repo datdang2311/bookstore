@@ -50,4 +50,8 @@ class NewsController extends Controller
         $new->where('id', '=', $id)->update(['active' => 0]);
         return redirect(url('admin/news'));
     }
+
+    public function addView(){
+        return view('backend.news_edit');
+    }
 }
