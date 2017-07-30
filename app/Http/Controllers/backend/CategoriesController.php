@@ -75,6 +75,11 @@ class CategoriesController extends Controller
     public function delete($id){
         $categories = new Categories();
         $categories->where('id','=',$id)->delete();
+        //xóa ảnh
+        $arr_old_image = $categories->where("id","=",$id)->select("imageUrl")->first();
+        $old_image = ($arr_old_image->imageUrl != "")?$arr_old_image->imageUrl:"test";
+        if(file_exists("upload/categories/$old_image"))
+            unlink("upload/categories/$old_image");
         return redirect('admin/categories');
     }
 }
