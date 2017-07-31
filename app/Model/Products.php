@@ -30,11 +30,4 @@ class Products extends Model
     {
         return $this->hasMany('App\Model\OrderItems', 'productId', 'id');
     }
-
-    public function getCategory($id)
-    {
-        $categories = DB::table('categories')->where('id', '=', $id)->first();
-        $categories_name = $categories->name;
-        return $categories_name;
-    }
 }

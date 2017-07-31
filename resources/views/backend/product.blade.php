@@ -29,11 +29,11 @@
   <table class="ck" data-sort="table">
     <thead>
       <tr>
-        <th width="110px">Ảnh</th>
-        <th width="70px">ID</th>
-        <th width="100px">Tên</th>
-        <th width="100px">Danh mục</th>       
-        <th width="100px">Giá bán</th>
+        <th width="70px">Ảnh</th>
+        <th width="30px">ID</th>
+        <th width="120px">Tên</th>
+        <th width="120px">Danh mục</th>
+        <th width="70px">Giá bán</th>
         <th width="20px">Status</th>
         <th width="10px"></th>
         <th width="10xp"></th>
@@ -42,13 +42,13 @@
     <tbody>
       @foreach($arr as $rows)
         <?php
-            $products = new \App\Model\Products();
-            $category = $products->getCategory($rows->categoryId);
+            $categories = new \App\Model\Categories();
+            $category = $categories->getById($rows->categoryId);
         ?>
         <tr>
             <td style="text-align: center">
             @if(file_exists("upload/products/$rows->image"))
-                <img src={{ asset('upload/products/$rows->image') }}>
+                <img style="height: 70px;" src={{ asset('upload/products/'.$rows->image) }}>
             @endif
             </td>
             <td>{{ $rows->id }}</td>

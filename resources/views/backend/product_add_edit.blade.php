@@ -18,26 +18,26 @@
 					<div class="line">
 						<div class="col-md-2">Mã sản phẩm:</div>
 						<div class="col-md-10">
-							<input type="text" name="id" class="form-control" disabled>
+							<input type="text" name="id" class="form-control" disabled value="{{ isset($arr->id)?$arr->id:"" }}">
 						</div>
 					</div>
 					<!-- End Line 1 -->
 					<div class="line">
 						<div class="col-md-2">Tên sản phẩm:</div>
 						<div class="col-md-10">
-							<input type="text" name="name" class="form-control">
+							<input type="text" name="name" class="form-control" value="{{ isset($arr->name)?$arr->name:"" }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Tác giả:</div>
 						<div class="col-md-10">
-							<input type="text" name="author" class="form-control">
+							<input type="text" name="author" class="form-control" value="{{ isset($arr->author)?$arr->author:"" }}">
 						</div>
 					</div>
 					<div class="line">
                     	<div class="col-md-2">Nhà xuất bản:</div>
                     		<div class="col-md-10">
-                    			<input type="text" name="published" class="form-control">
+                    			<input type="text" name="published" class="form-control" value="{{ isset($arr->published)?$arr->published:"" }}">
                     		</div>
                     </div>
 					<div class="line">
@@ -48,7 +48,7 @@
 								$categories = new \App\Model\Categories();
 								foreach($categories->get() as $category){
 								?>
-								<option>{{ $category->name }}</option>
+								<option {{ isset($arr->categoryId)&&($arr->categoryId == $categories->getIdByName($category->name))?"selected":"" }} >{{ $category->name }}</option>
 								<?php }?>
 							</select>
 						</div>
@@ -56,35 +56,30 @@
 					<div class="line">
 						<div class="col-md-2">Năm xuất bản:</div>
 						<div class="col-md-10">
-							<select class="form-select-year" name="year1">
-								<option>0</option><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
-							</select>
-							<select class="form-select-year" name="year2">
-								<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
-							</select>
-							<select class="form-select-year" name="year3">
-								<option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
-							</select>
-							<select class="form-select-year" name="year4">
-								<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option selected>7</option><option>8</option><option>9</option>
+							<select class="form-select" name="year">
+							    <?php
+							    $year_selected = isset($arr->year)?$arr->year:2017;
+							    for($i = 1900; $i<2018; $i++){ ?>
+							    <option {{($i == $year_selected)?"selected":""}} >{{ $i }}</option>
+							    <?php } ?>
 							</select>
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Cân nặng: </div>
 						<div class="col-md-10">
-							<input type="number" name="weight" class="form-control">
+							<input type="number" name="weight" class="form-control" value="{{ isset($arr->weight)?$arr->weight:"" }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Ngôn ngữ:</div>
 						<div class="col-md-10">
-							<select class="form-select">
+							<select class="form-select" name="language">
                                 <?php
                                 $languages = new \App\Model\Languages();
                                 foreach($languages->get() as $language){
                                 ?>
-                                <option>{{ $language->name }}</option>
+                                <option {{ isset($arr->languageId)&&($arr->languageId == $languages->getIdByName($language->name))?"selected":"" }}>{{ $language->name }}</option>
                                 <?php }?>
 							</select>
 						</div>
@@ -92,29 +87,30 @@
 					<div class="line">
 						<div class="col-md-2">Người dịch: </div>
 						<div class="col-md-10">
-							<input type="text" name="translatorName" class="form-control">
+							<input type="text" name="translatorName" class="form-control" value="{{ isset($arr->translatorName)?$arr->translatorName:"" }}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Kích thước: </div>
 						<div class="col-md-10">
-							<input type="number" name="size_x" class="form-ct"> mm
-							x <input type="number" name="size_y" class="form-ct"> mm
+						    <?php $size = isset($arr->size)?(explode('x', $arr->size)):"" ?>
+							<input type="number" name="size_x" class="form-ct" value="{{ isset($arr->size)?$size[0]:"" }}"> mm
+							x <input type="number" name="size_y" class="form-ct"value="{{ isset($arr->size)?$size[1]:"" }}"> mm
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Tình trạng: </div>
 						<div class="col-md-10">
 							<select class="form-select" name="status">
-								<option>Còn hàng</option>
-								<option>Hết hàng</option>
+								<option {{ isset($arr->status)&&($arr->status == 1)?"selected":"" }}>Còn hàng</option>
+								<option {{ isset($arr->status)&&($arr->status == 0)?"selected":"" }}>Hết hàng</option>
 							</select>
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Giá bìa: </div>
 						<div class="col-md-10">
-							<input type="number" name="" class="form-ct">VNĐ / Giá bán:<input type="number" name="" class="form-ct">VNĐ
+							<input type="number" class="form-ct" name="coverPrice" value="{{ isset($arr->coverPrice)?$arr->coverPrice:"" }}">VNĐ / Giá bán:<input type="number" name="salePrice" class="form-ct" value="{{ isset($arr->salePrice)?$arr->salePrice:"" }}">VNĐ
 						</div>
 					</div>
 					<div class="line">
@@ -126,7 +122,7 @@
 					<div class="line">
 						<div class="col-md-12">Mô tả:</div>
 						<div class="col-md-12">
-							<textarea name="product_description"></textarea>
+							<textarea name="product_description">{{ isset($arr->description)?$arr->description:"" }}</textarea>
 							<script type="text/javascript">
 								CKEDITOR.replace('product_description');
 							</script>

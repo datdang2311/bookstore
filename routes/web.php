@@ -23,6 +23,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::get('products', 'backend\ProductsController@getDanhsach');
     Route::get('products/add', 'backend\ProductsController@getAdd');
     Route::post('products/add', 'backend\ProductsController@add');
+    Route::get('products/edit/{id}', 'backend\ProductsController@getEdit');
+    Route::post('products/edit/{id}', 'backend\ProductsController@edit');
+    Route::get('products/delete/{id}', 'backend\ProductsController@delete');
 
     Route::get('categories', 'backend\CategoriesController@getDanhsach');
     Route::get('categories/add', 'backend\CategoriesController@getAdd');
@@ -53,7 +56,3 @@ Route::get('login', function () {
 Route::post('login', 'backend\loginController@checkLogin');
 
 Route::get('logout', 'backend\loginController@logout');
-
-Route::get('/', function () {
-    return view('backend.testCK');
-});
