@@ -1,4 +1,3 @@
-
 @extends('backend.layout')
 @section('controller')
 <div class="brw">
@@ -14,21 +13,20 @@
 		</tr>
 		<tr>
 			<td id="aepb" width="100%" colspan="2">
-			    @if(isset($new))
-				<form enctype="multipart/form-data" method="post" action="{{route('editNew')}}">
-				@else
-				<form enctype="multipart/form-data" method="post" action="{{route('addNew')}}">
-				@endif
+				<form enctype="multipart/form-data" method="post" action="{{isset($new) ? route('editNew') : route('add')}}">
+
+                    @if(isset($new))
 					<div class="line">
 						<div class="col-md-2">ID:</div>
 						<div class="col-md-10">
-							<input type="text" name="id" class="form-control" value="{{ $new->id }}" readonly>
+							<input type="text" name="id" class="form-control" value="{{$new->id}}" readonly>
 						</div>
 					</div>
+					@endif
 					<div class="line">
 						<div class="col-md-2">Tiêu đề:</div>
 						<div class="col-md-10">
-							<input type="text" name="title" class="form-control" value="{{ $new->title }}">
+							<input type="text" name="title" class="form-control" value="{{ isset($new) ? $new->title : ''}}">
 						</div>
 					</div>
 					<div class="line">
@@ -36,23 +34,22 @@
 						<div class="col-md-10">
 						    @if(isset($new->image))
 						        <img src="{{asset($new->image)}}" alt="" style="width: 50%"/>
-						         <input type="file" name="image" class="" value="{{ $new->image }}" >
+						         <input type="file" name="image">
 						    @else
-						        <input type="file" name="image" class="" value="{{ $new->image }}" >
-
+						        <input type="file" name="image">
 						    @endif
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Miêu tả:</div>
 						<div class="col-md-10">
-							<input type="text" name="description" class="form-control" value="{{ $new->description }}">
+							<input type="text" name="description" class="form-control" value="{{ isset($new) ? $new->description : ''}}">
 						</div>
 					</div>
 					<div class="line">
 						<div class="col-md-2">Nội dung</div>
 						<div class="col-md-10">
-							<input type="text" name="content" class="form-control" value="{{ $new->content }}">
+							<input type="text" name="content" class="form-control" value="{{ isset($new) ? $new->content : '' }}">
 						</div>
 					</div>
 					<div class="line submit_line">

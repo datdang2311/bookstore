@@ -10,15 +10,17 @@
 <div class="bpx azo">
   <div class="bpy bpz">
     <div class="ayt brg">
-      <input type="text" class="form-control bvj" placeholder="Tìm kiếm tài khoản">
+      <input type="text" class="form-control bvj" placeholder="Tìm kiếm">
       <span class="bv"><i class="fa fa-search" aria-hidden="true" ></i></span>
     </div>
   </div>
   <div class="bpy">
     <div class="pz">
-      <button type="button" class="ce pi">
-        <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
-      </button>
+      <a href="news/addView">
+          <button type="button" class="ce pi">
+            <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+          </button>
+      </a>
     </div>
   </div>
 </div>
