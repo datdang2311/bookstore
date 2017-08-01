@@ -37,14 +37,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::get('news', 'backend\NewsController@getAll');
     Route::get('news/editView/{id}', 'backend\NewsController@editView');
     Route::post('news/edit', ['as' => 'editNew', 'uses' => 'backend\NewsController@edit']);
-
     Route::get('news/addView', 'backend\NewsController@addView');
     Route::post('news/add', ['as' => 'add', 'uses' => 'backend\NewsController@add']);
-//    Route::get('news/addView', 'backend\NewsController@add');//okey
-
     Route::get('news/delete/{id}', 'backend\NewsController@delete');
 
     Route::get('orders', 'backend\OrderController@getAll');
+    Route::get('orders/editView/{id}', 'backend\OrderController@editView');
+    Route::get('orders/deleteProduct/{orderId}/{orderItemId}','backend\OrderController@deleteProduct');
+//    Route::get('orders/deleteProduct/{orderId}/{orderItemId}',function(){
+//        echo 'xxx';
+//    });
+    Route::post('orders/edit', ['as' => 'editOrder', 'uses' => 'backend\OrderController@edit']);
+    Route::get('news/delete/{id}', 'backend\OrderController@delete');
 
 });
 

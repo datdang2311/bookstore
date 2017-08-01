@@ -3,7 +3,7 @@
 <div class="brw">
     <h6 class="bry">Quản lý Website</h6>
 
-    <h2 class="brx">Tin tức</h2>
+    <h2 class="brx">Chi tiết đơn hàng</h2>
 </div>
 
 </div>
@@ -26,6 +26,53 @@
     </div>
 </div>
 
+<form enctype="multipart/form-data" method="post" action="{{isset($new) ? route('editNew') : route('add')}}">
+
+    @if(isset($new))
+    <div class="line">
+        <div class="col-md-2">ID:</div>
+        <div class="col-md-10">
+            <input type="text" name="id" class="form-control" value="{{$new->id}}" readonly>
+        </div>
+    </div>
+    @endif
+    <div class="line">
+        <div class="col-md-2">Tiêu đề:</div>
+        <div class="col-md-10">
+            <input type="text" name="title" class="form-control" value="{{ isset($new) ? $new->title : ''}}">
+        </div>
+    </div>
+    <div class="line">
+        <div class="col-md-2">Ảnh:</div>
+        <div class="col-md-10">
+            @if(isset($new->image))
+            <img src="{{asset($new->image)}}" alt="" style="width: 50%"/>
+            <input type="file" name="image">
+            @else
+            <input type="file" name="image">
+            @endif
+        </div>
+    </div>
+    <div class="line">
+        <div class="col-md-2">Miêu tả:</div>
+        <div class="col-md-10">
+            <input type="text" name="description" class="form-control"
+                   value="{{ isset($new) ? $new->description : ''}}">
+        </div>
+    </div>
+    <div class="line">
+        <div class="col-md-2">Nội dung</div>
+        <div class="col-md-10">
+            <input type="text" name="content" class="form-control" value="{{ isset($new) ? $new->content : '' }}">
+        </div>
+    </div>
+    <div class="line submit_line">
+        <div class="col-md-12">
+            <input type="submit" name="" value="Lưu" class="button_submit">
+        </div>
+    </div>
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+</form>
 
 <div class="nu">
     <table class="ck" data-sort="table">
@@ -87,12 +134,5 @@
             </li>
         </ul>
     </nav>
-</div>
-
-</div>
-</div>
-</div>
-
-<!--  -->
 </div>
 @endsection

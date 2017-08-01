@@ -206,7 +206,6 @@ body > div > div.di > div.es.bsk > div > div.bpx.azo > div.bpy.bpz > div > span 
     -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-
 .nav > li > a:focus, .nav > li > a:hover {
     background-color: #434857;
 }
@@ -323,4 +322,20 @@ body > div:nth-child(2) > div > div.es.bsk > div > div.nu > table > thead > tr >
     color: #fff;
     background-color: #434857;
     border-color: #434857;
+}
+
+#orderForm > div{
+    padding-bottom: 10px;
+}
+
+#orderForm > div.nu > div > div > input{
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    color: #fff;
+    background-color: #434857;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
 }
