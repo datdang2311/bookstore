@@ -37,6 +37,8 @@
   </head>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
+<script> window.ajaxBase = '{{url('http://bookstore.com/')}}'</script>
+
 <body>
     <div class="header bw">
         <a href="{{ url('admin/changePassword') }}">

@@ -1,3 +1,4 @@
+
 @extends('backend.layout')
 @section('controller')
 <div class="brw">
@@ -128,6 +129,7 @@
 							</script>
 						</div>
 					</div>
+
 					<div class="line submit_line">
 						<div class="col-md-12">
 							<input type="submit" name="" value="Lưu Sản phẩm" class="button_submit">

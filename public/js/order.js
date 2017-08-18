@@ -2,7 +2,7 @@ var order = {};
 order.removeItemCart = function (orderItemId) {
     if (window.confirm('Bạn có muốn xóa sản phẩm này khỏi đơn hàng') == true) {
         $.ajax({
-            url:  'http://bookstore.com/admin/orders/removeProduct',
+            url: ajaxBase + 'admin/orders/removeProduct',
             method : 'POST',
             dataType : 'json',
             contentType : 'application/x-www-form-urlencoded',
@@ -13,6 +13,7 @@ order.removeItemCart = function (orderItemId) {
                 orderItemId: orderItemId
             },
             success:function(result){
+
                 window.alert('Xóa sản phẩm thành công');
                 location.reload();
             },
