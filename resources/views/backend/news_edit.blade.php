@@ -43,7 +43,7 @@
 					<div class="line">
 					    <div class="col-md-2">Hot New</div>
 					    <div class="col-md-10">
-					        <input type="checkbox" {{ ((isset($new->hotNews)&&($new->hotNews==1))?"checked":"" ) }}>
+					        <input type="checkbox" {{ ((isset($new->hotNews)&&($new->hotNews==1))?"checked":"" ) }} name="hotNews">
 					        Tin tức nổi bật.
 					    </div>
 					</div>

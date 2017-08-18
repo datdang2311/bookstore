@@ -57,7 +57,8 @@ class NewsController extends Controller
         $title = $params['title'];
         $description = $params['description'];
         $content = $params['content'];
-        isset($params['hotNews'])?$hotNews=1:$hotNews=0;
+        if(isset($params['hotNews'])) $hotNews=1;
+        else $hotNews=0;
         $imagesUrl = '';
         if ($request->hasFile('image')) {
             $image = $request->file('image');
