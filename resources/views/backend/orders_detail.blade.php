@@ -141,9 +141,10 @@
                 {{--</a>--}}
             {{--</td>--}}
             <td>
-              <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa sản phẩm này khỏi đơn hàng?');" href="{{ url('admin/orders/deleteProduct/'.$order['id'].'/'.$item['id']) }}">
+{{--              <a onclick="return window.confirm('Bạn có chắc chắc muốn xóa sản phẩm này khỏi đơn hàng?');" href="{{ url('admin/orders/deleteProduct/'.$order['id'].'/'.$item['id']) }}">--}}
+              <button type="button" onclick="order.removeItemCart({{$item['id']}})">
                 <i class="fa fa-trash-o" aria-hidden="true" ></i>
-              </a>
+              </button>
             </td>
         </tr>
         @endforeach

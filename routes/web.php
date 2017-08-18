@@ -46,12 +46,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
 
     Route::get('orders', 'backend\OrderController@getAll');
     Route::get('orders/editView/{id}', 'backend\OrderController@editView');
-    Route::get('orders/deleteProduct/{orderId}/{orderItemId}','backend\OrderController@deleteProduct');
-//    Route::get('orders/deleteProduct/{orderId}/{orderItemId}',function(){
-//        echo 'xxx';
-//    });
+//    Route::get('orders/deleteProduct/{orderId}/{orderItemId}','backend\OrderController@deleteProduct');
+
+    //ROUTE phần AJAX
+    Route::post('orders/removeProduct', ['as' => 'deleteProduct', 'uses' => 'backend\OrderController@deleteProduct']);
+
     Route::post('orders/edit', ['as' => 'editOrder', 'uses' => 'backend\OrderController@edit']);
     Route::get('news/delete/{id}', 'backend\OrderController@delete');
+
 
 });
 
