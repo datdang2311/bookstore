@@ -33,9 +33,9 @@
         <tr>
             <th width="60px">ID</th>
             <th width="100px">Tiêu đề</th>
-            <th width="110px">Ảnh</th>
-            <th width="100px">Mô tả</th>
-            <th width="100px">Nội dung</th>
+            <th width="100px">Ảnh</th>
+            <th width="200px">Mô tả</th>
+            <th width="10px">Hot</th>
             <th width="10px"></th>
             <th width="10px"></th>
         </tr>
@@ -50,8 +50,8 @@
                 <img src="{{asset($new->image)}}" alt="" width="50%"/>
                 @endif
             </td>
-            <td style="max-height: inherit">{{$new->description}}</td>
-            <td>{{$new->content}}</td>
+            <td style="height: 70px;">{{$new->description}}</td>
+            <td><input type="checkbox" disabled {{($new->hotNews==1?"checked":"")}}></td>
             <td>
                 <a href="{{ url('admin/news/editView/'.$new->id) }}">
                     <i class="fa fa-wrench" aria-hidden="true" id="fa-wrench"></i>

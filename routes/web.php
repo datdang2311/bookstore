@@ -34,6 +34,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'checkLogin'], function () {
     Route::post('categories/edit/{id}', 'backend\CategoriesController@edit');
     Route::get('categories/delete/{id}', 'backend\CategoriesController@delete');
 
+    Route::get('slides', 'backend\SlideController@getSlide');
+    Route::get('slide/edit/{id}','backend\SlideController@getEdit');
+
     Route::get('news', 'backend\NewsController@getAll');
     Route::get('news/editView/{id}', 'backend\NewsController@editView');
     Route::post('news/edit', ['as' => 'editNew', 'uses' => 'backend\NewsController@edit']);

@@ -82,6 +82,9 @@
               <li class="qp">
                 <a class="qn " href="{{ url('admin/categories') }}">Danh mục sản phẩm</a>
               </li>
+              <li class="qp">
+                <a class="qn" href="{{ url('admin/slides') }}">Slide ảnh</a>
+              </li>
               <li class="ayx">Quản lý bán hàng</li>
               <li class="qp">
                 <a class="qn" href="{{ url('admin/orders') }}">

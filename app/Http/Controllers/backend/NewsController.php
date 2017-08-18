@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function getAll()
     {
-        $news = News::all()->where('active', '=', 1);
+        $news = News::all();
         return view('backend.news', ['news' => $news]);
     }
 
@@ -26,13 +26,13 @@ class NewsController extends Controller
         $title = $params['title'];
 
         if ($request->hasFile('image')) {
-            $images = $request->file('image', '');
+            $images = $request->file('image','');
             $fileDirPath = "upload/titleImage/";
             if (!file_exists($fileDirPath)) {
                 mkdir($fileDirPath, 0777, true);
             }
             $fileName = $images->getClientOriginalName();
-            $images->move(env('APP_URL') . '/' . $fileDirPath, $fileName);
+            $images->move($fileDirPath, $fileName);
             $imagesUrl = $fileDirPath . $fileName;
         } else $imagesUrl = News::find(2, ['image'])['image'];
 
@@ -57,6 +57,7 @@ class NewsController extends Controller
         $title = $params['title'];
         $description = $params['description'];
         $content = $params['content'];
+        isset($params['hotNews'])?$hotNews=1:$hotNews=0;
         $imagesUrl = '';
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -65,12 +66,12 @@ class NewsController extends Controller
                 mkdir($fileDirPath, 0777, true);
             }
             $fileName = $image->getClientOriginalName();
-            $image->move(env('APP_URL') . '/' . $fileDirPath, $fileName);
-            $imagesUrl = $fileDirPath . $fileName;
+            $image->move($fileDirPath, $fileName);
+            $imagesUrl = $fileDirPath.$fileName;
         }
         $updateTime = date("Y-m-d H:i:s", time());
         $new = new News();
-        $new->insert(['title'=>$title,'image'=>$imagesUrl,'description'=>$description,'content'=>$content,'active'=>1,'updateTime'=>$updateTime,'createTime'=>$updateTime]);
+        $new->insert(['title'=>$title,'image'=>$imagesUrl,'description'=>$description,'content'=>$content,'updateTime'=>$updateTime,'createTime'=>$updateTime, 'hotNews'=>$hotNews]);
         return redirect(url('admin/news'));
     }
 
