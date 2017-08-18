@@ -8,6 +8,7 @@ use App\Model\Orders;
 use App\Model\Products;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 class orderController extends Controller
 {
@@ -24,6 +25,7 @@ class orderController extends Controller
     {
         $order = Orders::find($id)->toArray();
         $orderItems = OrderItems::all()->where('orderId', '=', $order['id'])->where('active', '=', 1)->toArray();
+        $products = array();
         foreach ($orderItems as $item) {
             $products[$item['id']] = Products::find($item['productId'])->toArray();
         }
@@ -31,13 +33,17 @@ class orderController extends Controller
         return view('backend.orders_detail', ['order' => $order, 'orderItems' => $orderItems, 'products' => $products, 'customer' => $customer]);
     }
 
-    public function deleteProduct($orderId, $orderItemId)
+    public function deleteProduct(Request $request)
     {
+        $params = $request->all();
+        $orderItemId = $params['orderItemId'];
         $orderItem = new OrderItems();
         $orderItem->where('id', '=', $orderItemId)->update(['active' => 0]);
-        return redirect(url('admin/orders/editView/'.$orderId));
+        echo json_encode(['success'=>'true']);
     }
-    public function edit(Request $request){
+
+    public function edit(Request $request)
+    {
         $params = $request->toArray();
         $orderId = $params['orderId'];
         $name = $params['name'];
@@ -51,14 +57,14 @@ class orderController extends Controller
         $shippingStatus = $params['shippingStatus'];
 
         $order = new Orders();
-        $order->where('id','=',$orderId)->update(['ReceiverName'=>$name,
-            'ReceiverPhone'=>$phoneNumber,
-            'ReceiverAddress'=>$address,
-            'PaymentMethod'=>$paymentMethod,
-            'PaymentStatus'=>$paymentStatus,
-            'ShipmentMethod'=>$shipmentMethod,
-            'ShippingStatus'=>$shippingStatus
+        $order->where('id', '=', $orderId)->update(['ReceiverName' => $name,
+            'ReceiverPhone' => $phoneNumber,
+            'ReceiverAddress' => $address,
+            'PaymentMethod' => $paymentMethod,
+            'PaymentStatus' => $paymentStatus,
+            'ShipmentMethod' => $shipmentMethod,
+            'ShippingStatus' => $shippingStatus
         ]);
-        return redirect(url('admin/orders/editView/'.$orderId));
+        return redirect(url('admin/orders/editView/' . $orderId));
     }
 }

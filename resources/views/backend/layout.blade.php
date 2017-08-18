@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
       
         Quản lý
@@ -109,6 +109,7 @@
     <script src="{{ asset('js/tablesorter.min.js') }}"></script>
     <script src="{{ asset('js/toolkit.js') }}"></script>
     <script src="{{ asset('js/application.js') }}"></script>
+    <script src="{{asset('js/order.js')}}"></script>
     <script>
       // execute/clear BS loaders for docs
       $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
