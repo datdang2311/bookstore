@@ -41,6 +41,13 @@
 						</div>
 					</div>
 					<div class="line">
+					    <div class="col-md-2">Hot New</div>
+					    <div class="col-md-10">
+					        <input type="checkbox" {{ ((isset($new->hotNews)&&($new->hotNews==1))?"checked":"" ) }}>
+					        Tin tức nổi bật.
+					    </div>
+					</div>
+					<div class="line">
 						<div class="col-md-2">Miêu tả:</div>
 						<div class="col-md-10">
 							<input type="text" name="description" class="form-control" value="{{ isset($new) ? $new->description : ''}}">
@@ -49,7 +56,10 @@
 					<div class="line">
 						<div class="col-md-2">Nội dung</div>
 						<div class="col-md-10">
-							<input type="text" name="content" class="form-control" value="{{ isset($new) ? $new->content : '' }}">
+							<textarea name="content">{{ isset($new) ? $new->content : '' }}"</textarea>
+							<script type="text/javascript">
+                            	CKEDITOR.replace('content');
+                            </script>
 						</div>
 					</div>
 					<div class="line submit_line">

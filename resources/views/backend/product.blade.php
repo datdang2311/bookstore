@@ -43,7 +43,7 @@
       @foreach($arr as $rows)
         <?php
             $categories = new \App\Model\Categories();
-            $category = $categories->getById($rows->categoryId);
+            $category = $categories->getById($rows->categoryId);//do lấy theo từng cái nên lấy từ controller rắc rối
         ?>
         <tr>
             <td style="text-align: center">
